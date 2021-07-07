@@ -1,0 +1,116 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div class="content-wrapper">
+
+  <section class="content-header">
+    <h1>
+      Usuarios
+    </h1>
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="row">
+      <div class="col-lg-6 col-xs-12">
+        <!-- Default box -->
+        <div class="box">
+          <div class="box-header with-border">
+            <h3 class="box-title">Ingresar nuevo usuario</h3>
+
+
+
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
+                title="Collapse">
+                <i class="fa fa-minus"></i></button>
+            </div>
+          </div>
+          <form method="POST">
+            {% load crispy_forms_tags %}
+            {% csrf_token %}
+
+
+
+            <div class="box-body">
+              {{ form|crispy}}
+            </div>
+
+            <!-- /.box-body -->
+            <div class="box-footer">
+              <button type="reset" class="btn btn-warning mb-2">Reset</button>
+              <button type="submit" class="btn btn-primary mb-2">Confirmar</button>
+            </div>
+            <!-- /.box-footer-->
+          </form>
+        </div>
+        <!-- /.box -->
+      </div>
+
+
+      <div class="col-lg-6 col-xs-12">
+        <!-- Default box -->
+        <div class="box">
+          <div class="box-header with-border">
+            <h3 class="box-title">Administracion de perfiles </h3>
+
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
+                title="Collapse">
+                <i class="fa fa-minus"></i></button>
+            </div>
+          </div>
+          <div class="box-body">
+
+
+            <table class="table">
+              <thead>
+                <tr>
+
+                  <th scope="col">nombre</th>
+                  <th scope="col">Rut</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for registro in lista %}
+                <tr>
+
+                  <td>{{ registro.nombre }},{{registro.apellido}}</td>
+                  <td>{{ registro.rut_paciente }}</td>
+                  <td>
+                    <a href="{% url 'modificar-paciente' registro.rut_paciente %}"><i class="fa fa-edit"></i></a>
+                    <a href="#"><i class="fa fa-times"></i></a>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+
+
+          </div>
+          <!-- /.box-body -->
+          <div class="box-footer">
+
+
+
+
+
+
+
+
+          </div>
+          <!-- /.box-footer-->
+        </div>
+        <!-- /.box -->
+      </div>
+
+    </div>
+
+  </section>
+  <!-- /.content -->
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- jQuery 3 -->
+<script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
+
+<div class="content-wrapper">
+
+  <section class="content-header">
+    <h1>
+      calendario
+    </h1>
+  </section>
+
+ <!-- Main content -->
+ <section class="content">
+  <div class="row">
+    
+    <div class="col-md-12">
+      <div class="box box-primary">
+        <div class="box-body no-padding">
+          <!-- THE CALENDAR -->
+          <div id="calendar"></div>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /. box -->
+    </div>
+    <!-- /.col -->
+  </div>
+  <!-- /.row -->
+</section>
+<!-- /.content -->
+
+  
+
+ 
+</div>
+
+  {% endblock %}
+
+{% block extrajs %}
+
+
+<script src="{% static 'bower_components/moment/moment.js' %}"></script>
+<script src="{% static 'bower_components/fullcalendar/dist/fullcalendar.min.js' %}"></script>
+<script type='text/javascript' src={% static 'bower_components/fullcalendar/dist/locale-all.js' %}></script>
+
+<!-- Page specific script -->
+<script>
+ $(document).ready(function() {
+    $('#calendar').fullCalendar({
+        header: {
+            left: 'prev,next',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay'
+        },
+
+        buttonIcons: true,
+        weekNumbers: false,
+        editable: true,
+        eventLimit: true,
+        locale:'es',
+        events: [
+          {% for registro in lista %}
+            {
+              title:'{{registro.id}}',
+              start:'{{registro.fecha|date:"Y-m-d"}}',
+
+            },
+          {% endfor %}
+
+        ]
+    });
+});
+
+</script>
+
+
+{% endblock %}

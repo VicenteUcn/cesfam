@@ -1,0 +1,284 @@
+{% extends 'index.html' %} {% block content %}
+
+<div class="content-wrapper">
+  <section class="content-header">
+    <h1>programas</h1>
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="row">
+      <div class="col-lg-6 col-xs-12">
+        <!-- Default box -->
+        <div class="box">
+          <div class="box-header with-border">
+            <h3 class="box-title">Ingresar nueva especialidad</h3>
+
+            <div class="box-tools pull-right">
+              <button
+                type="button"
+                class="btn btn-box-tool"
+                data-widget="collapse"
+                data-toggle="tooltip"
+                title="Collapse"
+              >
+                <i class="fa fa-minus"></i>
+              </button>
+            </div>
+          </div>
+          <div class="box-body">
+            <form>
+              <div class="form-group">
+                <label for="NombreInfantil">Nombres</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="NombreInfantil"
+                  placeholder=""
+                />
+              </div>
+
+              <button type="submit" class="btn btn-primary mb-2">
+                Confirmar
+              </button>
+            </form>
+            <div class="box-footer">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">nombre</th>
+                    <th scope="col">acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>especialidad 1</td>
+                    <td>
+                      <a href="#"><i class="fa fa-edit"></i></a>
+                      <a href="#"><i class="fa fa-times"></i></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>especialidad 2</td>
+                    <td>
+                      <a href="#"><i class="fa fa-edit"></i></a>
+                      <a href="#"><i class="fa fa-times"></i></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>especialidad 3</td>
+                    <td>
+                      <a href="#"><i class="fa fa-edit"></i></a>
+                      <a href="#"><i class="fa fa-times"></i></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- /.box-body -->
+
+            <!-- /.box-footer-->
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-xs-12">
+          <!-- Default box -->
+          <div class="box">
+            <div class="box-header with-border">
+              <h3 class="box-title">Ingresar nuevo especialista</h3>
+
+              <div class="box-tools pull-right">
+                <button
+                  type="button"
+                  class="btn btn-box-tool"
+                  data-widget="collapse"
+                  data-toggle="tooltip"
+                  title="Collapse"
+                >
+                  <i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body">
+              <form>
+                <div class="form-group">
+                  <label for="NombreInfantil">Nombre</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="NombreInfantil"
+                    placeholder=""
+                  />
+                </div>
+  
+                <div class="form-group">
+                  <label for="NombreInfantil">apellido</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="NombreInfantil"
+                    placeholder=""
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="NombreInfantil">Rut</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="NombreInfantil"
+                    placeholder=""
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="NombreInfantil">especialidad</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="NombreInfantil"
+                    placeholder=""
+                  />
+
+                  <div class="form-group">
+                    <label for="NombreInfantil">Direccion</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="NombreInfantil"
+                      placeholder=""
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="NombreInfantil">Telefono</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="NombreInfantil"
+                      placeholder=""
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="NombreInfantil">Nacionalidad</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="NombreInfantil"
+                      placeholder=""
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="NombreInfantil">Fecha de Nacimiento</label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="NombreInfantil"
+                      placeholder=""
+                    />
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary mb-2">
+                  ingresar
+                </button>
+              </form>
+              <div class="box-footer">
+                
+              </div>
+  
+              <!-- /.box-body -->
+  
+              <!-- /.box-footer-->
+            </div>
+            <!-- /.box-body -->
+          
+            <!-- /.box-footer-->
+          </div>
+          <!-- /.box -->
+        </div>
+
+        <div class="col-lg-6 col-xs-12">
+          <!-- Default box -->
+          {{form}}
+          <div class="box">
+            <div class="box-header with-border">
+              <h3 class="box-title">Buscar especialista</h3>
+
+              <div class="box-tools pull-right">
+                <button
+                  type="button"
+                  class="btn btn-box-tool"
+                  data-widget="collapse"
+                  data-toggle="tooltip"
+                  title="Collapse"
+                >
+                  <i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">nombre</th>
+                    <th scope="col">acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>especialidad 1</td>
+                    <td>
+                      <a href="#"><i class="fa fa-edit"></i></a>
+                      <a href="#"><i class="fa fa-times"></i></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>especialidad 2</td>
+                    <td>
+                      <a href="#"><i class="fa fa-edit"></i></a>
+                      <a href="#"><i class="fa fa-times"></i></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>especialidad 3</td>
+                    <td>
+                      <a href="#"><i class="fa fa-edit"></i></a>
+                      <a href="#"><i class="fa fa-times"></i></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="box-footer">
+                
+              </div>
+  
+              <!-- /.box-body -->
+  
+              <!-- /.box-footer-->
+            </div>
+            <!-- /.box-body -->
+          
+            <!-- /.box-footer-->
+          </div>
+          <!-- /.box -->
+        </div>
+    </div>
+  </section>
+  <!-- /.content -->
+</div>
+{% endblock %}
